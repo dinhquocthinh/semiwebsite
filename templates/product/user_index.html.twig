@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12" style="background-color:lavender;"><h1> PRODUCT</h1></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="background-color:#F5F5F5;">
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-lg-4 col-sm-4">
+                            <div class="box_main">
+                                <h4 class="shirt_text">{{ product.ProductName }}</h4>
+                                <div class="tshirt_img"><img src=" {{ asset('upload/productImage/' ~ product.Image) }}" width="300px" height="250px"></div>
+                                <p  style="color: #B0413E">Price: $ <span style="color: #262626; font-weight: bold">{{ product.Price }}</span></p>
+{#                                <h6 class="depcription_text"> {{ product.Description }}</h6>#}
+{#                                <h6 class="notes_text"> {{ product.Notes }}</h6>#}
+                                <div class="btn_main">
+{#                                    <div class="btn btn-success" ><a href="#" style="color:white">Buy Now</a></div>#}
+                                    <div class="btn btn-primary"><a href="{{path('details_product',{'id':product.id})}} " style="color:white">View detail</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
