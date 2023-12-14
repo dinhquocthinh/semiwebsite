@@ -42,7 +42,6 @@ class ProductController extends AbstractController
         ]);
     }
 
-
     #[Route('/product/productbyCategory/{id}', name: 'product_by_category')]
     public  function productByCatAction(ManagerRegistry $doctrine ,$id):Response
     {
@@ -50,7 +49,7 @@ class ProductController extends AbstractController
         $products = $category->getProducts();
         $categories = $doctrine->getRepository('App\Entity\Category')->findAll();
         return $this->render('product/index.html.twig', ['products' => $products,
-            'categories'=>$categories]);
+            'categories' => $categories]);
     }
 
 
