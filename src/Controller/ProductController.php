@@ -155,7 +155,6 @@ class ProductController extends AbstractController
             $em->persist($product);
             $em->flush();
 
-            // Thêm thông báo flash
             $this->addFlash(
                 'notice',
                 'Product is Edited'

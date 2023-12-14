@@ -1,25 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{#    <div class="bs-example" data-example-id="striped-table">#}
-{#        <table class="table table-striped">#}
-{#            <thead>#}
-{#            <tr>#}
-
-{#                <th>Category Name</th>#}
-{#                <th>Created Date</th>#}
-{#            </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#            {% for category in categories %}#}
-{#                <tr>#}
-{#                    <td><a href="{{path('product_by_category',{'id':category.id})}} ">{{ category.CatName }}</a></td>#}
-{#                    <td>{{ category.CreateDate|date('F j,Y, g:i a') }}</td>#}
-{#                </tr>#}
-{#            {% endfor %}#}
-{#            </tbody>#}
-{#        </table>#}
-{#    </div>#}
     <div class="bs-example" data-example-id="striped-table">
         <table class="table table-striped">
             <a href="{{path('create_product')}} " class='btn btn-success'>Create new Products</a>
