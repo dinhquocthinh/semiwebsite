@@ -2,7 +2,8 @@
 {% block body %}
     {{ form_start(form) }}
 
-    <a href="{{ path('list_product') }}" class="btn btn-default">Back to Category List</a>
+    <a href="{{ path('list_product') }}" class="btn btn-default">Back to Products List</a>
+    <hr>
     <div class="form-group">
         <label for="category">Category</label>
         {{ form_widget(form.category,{

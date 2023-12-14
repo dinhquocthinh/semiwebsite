@@ -28,6 +28,10 @@
                                     <td width="390">Computer configuration</td>
                                     <td>{{ products.Notes }}</td>
                                 </tr>
+                                <tr>
+                                    <td width="390">Date</td>
+                                    <td> {{ products.CreateDate|date('F j,Y, g:i a') }}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

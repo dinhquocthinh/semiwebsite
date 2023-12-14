@@ -16,17 +16,14 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductController extends AbstractController
 {
-//    #[Route('/product', name: 'list_product')] //product
-//    public function index(ManagerRegistry $doctrine): Response
-//    {
-//        $products = $doctrine->getRepository('App\Entity\Product')->findAll();
-//        return $this->render('product/index.html.twig', [ //user_index
-//            'products' => $products,
-//        ]);
-//    }
-//
-//
-
+    #[Route('/product', name: 'list_product')] //product
+    public function index(ManagerRegistry $doctrine): Response
+    {
+        $products = $doctrine->getRepository('App\Entity\Product')->findAll();
+        return $this->render('product/index.html.twig', [ //user_index
+            'products' => $products,
+        ]);
+    }
 
     #[Route('/product/details/{id}', name: 'details_product')]
     public  function detailsAction(ManagerRegistry $doctrine ,$id)
@@ -36,16 +33,14 @@ class ProductController extends AbstractController
         return $this->render('product/details.html.twig', ['products' => $product]);
     }
 
-
-    #[Route('/', name: 'list_product')] //product
-    public function index(ManagerRegistry $doctrine): Response
+    #[Route('/', name: 'list_product_user')] //product
+    public function index_user(ManagerRegistry $doctrine): Response
     {
         $products = $doctrine->getRepository('App\Entity\Product')->findAll();
         return $this->render('product/user_index.html.twig', [ //user_index
             'products' => $products,
         ]);
     }
-
 
 
     #[Route('/product/productbyCategory/{id}', name: 'product_by_category')]
